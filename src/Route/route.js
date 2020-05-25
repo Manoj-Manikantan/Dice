@@ -6,6 +6,7 @@ import Contact from "../Component/Contact";
 import People from "../Component/People";
 import SampleProjects from "../Component/sampleProjects";
 import Services from "../Component/Services";
+import Login from "../Component/Login";
 
 class Routes extends Component {
     render() {
@@ -18,6 +19,7 @@ class Routes extends Component {
                     <Route exact path="/services" component={Services} />
                     <Route exact path="/sampleProjects" component={SampleProjects} />
                     <Route exact path="/contact" component={Contact} />
+                    <Route exact path="/login" component={Login} />
                 </Switch>
             </Router>
         );

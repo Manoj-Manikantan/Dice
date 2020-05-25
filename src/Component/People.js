@@ -1,20 +1,19 @@
-import React, { Component } from 'react'
+import React, { useState } from 'react'
 import NavbarPage from "../Component/Layout/Navbar";
 import Footer from "../Component/Layout/Footer";
 import { Container } from 'reactstrap';
 
-export class People extends Component {
+const People = () => {
 
-    render() {
-        return (
-            <Container>
-                <NavbarPage />
-                {/* People content to be added here  */}
-                <Footer />
-            </Container>
-
-        )
-    }
+    return (
+        <Container>
+            <NavbarPage />
+            <div>
+               {/* Code to be added. */}
+            </div>
+            <Footer />
+        </Container>
+    )
 }
 
 export default People
