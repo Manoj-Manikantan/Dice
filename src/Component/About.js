@@ -6,32 +6,42 @@ import MeshNetworkImage from '../Images/MeshNetworks.jpg'
 import AboutUsBackgroundImage from '../Images/background.jpg'
 import NavbarPage from "../Component/Layout/Navbar";
 import Footer from "../Component/Layout/Footer";
+var first, second, third, fourth, fifth, sixth
 
 export class About extends Component {
     componentDidMount() {
-        setTimeout(() => {
+        first = setTimeout(() => {
             document.getElementById("questionMark").style.opacity = 1
         }, 3200)
 
-        setTimeout(() => {
+        second = setTimeout(() => {
             document.getElementById("whatWeDoParagraph").style.opacity = 1
         }, 400)
 
-        setTimeout(() => {
+        third = setTimeout(() => {
             document.getElementById("whatWeDoParagraph").style.color = "white"
         }, 3999)
 
-        setTimeout(() => {
+        fourth = setTimeout(() => {
             document.getElementById("whatWeDoTextContainer").style.visibility = "visible"
         }, 4600)
 
-        setTimeout(() => {
+        fifth = setTimeout(() => {
             document.getElementById("horizontalLine").style.opacity = 1
         }, 2000)
-        setTimeout(() => {
+        sixth = setTimeout(() => {
             document.getElementById("whatWeDoContainer").style.transform = "translate(0, 0)"
         }, 3299)
     }
+    componentWillUnmount() {
+        clearInterval(first)
+        clearInterval(second)
+        clearInterval(third)
+        clearInterval(fourth)
+        clearInterval(fifth)
+        clearInterval(sixth)
+    }
+
     render() {
         return (
             <>

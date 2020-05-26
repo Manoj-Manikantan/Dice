@@ -2,33 +2,41 @@ import React, { Component } from 'react'
 import styled, { keyframes } from 'styled-components'
 import NavbarPage from "../Component/Layout/Navbar";
 import Footer from "../Component/Layout/Footer";
+import {NavLink} from 'react-router-dom'
+var first, second, third, fourth, fifth, sixth
 
 export class Home extends Component {
-
     componentDidMount() {
-
-        setTimeout(() => {
+        first = setTimeout(() => {
             document.getElementById("firstParagraph").style.opacity = 1
         }, 1199)
-        setTimeout(() => {
+        second = setTimeout(() => {
             document.getElementById("secondParagraph").style.opacity = 1
         }, 1700)
-        setTimeout(() => {
+        third = setTimeout(() => {
             document.getElementById("thirdParagraph").style.opacity = 1
         }, 2599)
 
-        setTimeout(() => {
+        fourth = setTimeout(() => {
             document.getElementById("paragraphContainer").style.top = "-10px"
         }, 2200)
 
-        setTimeout(() => {
+        fifth = setTimeout(() => {
             document.getElementById("learnMoreButton").style.opacity = 1
         }, 3699)
+    }
+    componentWillUnmount() {
+        clearInterval(first)
+        clearInterval(second)
+        clearInterval(third)
+        clearInterval(fourth)
+        clearInterval(fifth)
+        clearInterval(sixth)
     }
     render() {
         return (
             <>
-            <NavbarPage />
+                <NavbarPage />
                 <OuterContainer>
                     <ParagraphContainer id="paragraphContainer">
                         <Paragraph id="firstParagraph">
@@ -40,10 +48,10 @@ export class Home extends Component {
                         <Paragraph id="thirdParagraph">
                             patterns that exist in the data.
                         </Paragraph>
-                        <a href="AboutUs.js"><LearnMoreButton id="learnMoreButton">Learn More</LearnMoreButton></a>
+                        <NavLink to="About"><LearnMoreButton id="learnMoreButton">Learn More</LearnMoreButton></NavLink>
                     </ParagraphContainer>
                 </OuterContainer>
-            <Footer />    
+                <Footer />
             </>
         )
     }

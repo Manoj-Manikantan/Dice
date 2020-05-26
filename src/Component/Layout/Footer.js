@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
+import { NavLink } from 'react-router-dom'
 
 export class Footer extends Component {
     render() {
@@ -7,19 +8,15 @@ export class Footer extends Component {
             <OuterContainer>
                 <HorizontalLine />
                 <AboutAndContactUsContainer>
-                    <Paragraph>About</Paragraph>
-                    <Paragraph>People</Paragraph>
-                    <Paragraph>Services</Paragraph>
-                    <Paragraph>Sample Projects</Paragraph>
-                    <Paragraph>Contact</Paragraph>
+                    <Paragraph>Follow Us</Paragraph>
                 </AboutAndContactUsContainer>
                 <SocialMediaLinksContainer>
-                    <FacebookIcon className="fa fa-facebook-square fa-3x" aria-hidden="true" />
-                    <TwitterIcon className="fa fa-twitter-square fa-3x" aria-hidden="true" />
-                    <InstagramIcon className="fa fa-instagram fa-3x" aria-hidden="true" />
+                    <a href="https://www.facebook.com/pg/saskpolytech/posts/" target="_blank"><Icon className="fa fa-facebook-square fa-3x" aria-hidden="true" /></a>
+                    <a href="https://twitter.com/SaskPolytech" target="_blank"><Icon className="fa fa-twitter-square fa-3x" aria-hidden="true" /></a>
+                    <a href="https://www.instagram.com/SaskPolytech/" target="_blank"><Icon className="fa fa-instagram fa-3x" aria-hidden="true" /></a>
                 </SocialMediaLinksContainer>
                 <AllRightsReservedContainer>
-                    © 2020 DICE. All Rights Reserved.
+                    <Paragraph>© 2020 DICE. All Rights Reserved.</Paragraph>
                 </AllRightsReservedContainer>
             </OuterContainer>
         )
@@ -28,51 +25,59 @@ export class Footer extends Component {
 
 export default Footer
 
-const Div = styled.div``;
-const AllRightsReservedContainer = styled(Div)`
+export const Nav = styled(NavLink)`
+text-decoration:none;
+color:#743c97;
+    @media (max-width:739px){
+    color:white;
+}`;
+export const AllRightsReservedContainer = styled.div`
     margin-top:10px;
     padding-bottom:10px;
 `;
-const HorizontalLine = styled.hr`
+export const HorizontalLine = styled.hr`
 border: 0.5px solid #743c97;
 width:70vw;
 `;
-const OuterContainer = styled(Div)`
-    bottom:0;
+export const OuterContainer = styled.div`
+position:relative;
+z-index:2;
+bottom:0;
+    height:150px;
     display:grid;
     grid-template-columns:100%;
     text-align:center;
     color:#743c97;
 `;
-const AboutAndContactUsContainer = styled(Div)`
+export const AboutAndContactUsContainer = styled.div`
     display:grid;
     grid-template-columns: 100%;
     justify-content:center;
     align-items:center;
     @media (min-width:740px){
-        grid-template-columns:repeat(5,10%);
+        text-align:center;
     }
 `;
-const Paragraph = styled.p``;
-const SocialMediaLinksContainer = styled(Div)`
+export const Paragraph = styled.p`font-size:25px;`;
+export const SocialMediaLinksContainer = styled.div`
     display:grid;
-    grid-template-columns:repeat(3,15%);
+    grid-template-columns:repeat(3,20%);
     justify-content:center;
 
     @media (min-width:740px){
         grid-template-columns:repeat(3,8%);
     }
 `;
-const Icon = styled.i`
+export const Icon = styled.i`
     margin-left: 10px;
-`;
-const FacebookIcon = styled(Icon)`
-color:#743c97;
-`;
-const TwitterIcon = styled(Icon)`
-color:#743c97;
-`;
-const InstagramIcon = styled(Icon)`
-color:#743c97;
-
+    font-size: 40px;
+    &:nth-of-type(1){
+        color:#743c97;
+    }
+    &:nth-of-type(2){
+        color:#743c97;
+    }
+    &:nth-of-type(3){
+        color:#743c97;
+    }
 `;

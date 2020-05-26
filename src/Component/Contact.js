@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import styled, { keyframes } from 'styled-components'
 import NavbarPage from "../Component/Layout/Navbar";
-import Footer from "../Component/Layout/Footer";
 
 export class Contact extends Component {
     render() {
@@ -40,7 +39,6 @@ export class Contact extends Component {
                         </SocialMediaContainer>
                     </LetsTalkContainer>
                 </OuterContainer>
-                <Footer />
             </>
         )
     }

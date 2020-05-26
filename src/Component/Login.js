@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
-import Logo from "../Images/logo.jpg"
+import { Container } from 'reactstrap';
+import NavbarPage from "../Component/Layout/Navbar";
+import Footer from "../Component/Layout/Footer";
+
 
 export class Login extends Component {
     componentDidMount() {
@@ -31,21 +34,23 @@ export class Login extends Component {
     }
     render() {
         return (
-            <OuterContainer>
-                <img src={Logo} alt="Logo Image" />
-
-                <Heading>Welcome Back</Heading>
-                <Form>
-                    <InnerContainer>
-                        <Label id="nameLabel">Name</Label>
-                        <Input id="nameInput" type="text" />
-                        <Label id="passwordLabel">Password</Label>
-                        <Input id="passwordInput" type="password" />
-                        <Button>Sign In</Button>
-                    </InnerContainer>
-                </Form>
-            </OuterContainer>
-
+            <Container>
+                <NavbarPage />
+                <OuterContainer>
+                    {/* <Image src={Logo} alt="Logo Image" /> */}
+                    <Heading>Welcome Back</Heading>
+                    <Form>
+                        <InnerContainer>
+                            <Label id="nameLabel">Name</Label>
+                            <Input id="nameInput" type="text" />
+                            <Label id="passwordLabel">Password</Label>
+                            <Input id="passwordInput" type="password" />
+                            <Button>Sign In</Button>
+                        </InnerContainer>
+                    </Form>
+                </OuterContainer>
+                <Footer />
+            </Container>
         )
     }
 }
@@ -56,6 +61,7 @@ const OuterContainer = styled.div`
     place-items:center;
     height: calc(100vh - 150px);
 `;
+const Image = styled.img`width: 340px; height:auto;`;
 const Button = styled.button`
 
     background-color: #743c97;

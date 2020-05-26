@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container, Card, CardTitle, Row, Col, CardDeck, CardText, CardBody } from "reactstrap"
+import { Container, Card, CardTitle, Row, CardDeck, CardText, CardBody } from "reactstrap"
 import NavbarPage from "../Component/Layout/Navbar";
 import Footer from "../Component/Layout/Footer";
 // import LoremIpsum from 'react-lorem-ipsum';

@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
 import Hamburger from "../../Images/icons8-gradient-line-50.png"
-import Logo from '../../Images/logo.jpg'
+import Logo from "../../Images/logo.jpg"
+import { NavLink } from 'react-router-dom'
 
 export class NavbarPage extends Component {
 
@@ -16,27 +17,27 @@ export class NavbarPage extends Component {
     return (
       <OuterContainer>
         <ImagesContainer>
-          <LogoImage src={Logo} alt="logo" />
+          <NavLink to="/"> <Image src={Logo} alt="logo" /></NavLink>
           <HamburgerImage id="hamburgerIcon" src={Hamburger} alt="hamburgerIcn" />
         </ImagesContainer>
         <List id="list" className="inactive">
-          <ListItem>
-            About
+          <ListItem id="list1" className="listItem fadeOut">
+            <Nav exact to="/About">About</Nav>
           </ListItem>
-          <ListItem>
-            People
+          <ListItem className="listItem fadeOut">
+            <Nav exact to="/People">People</Nav>
           </ListItem>
-          <ListItem>
-            Services
+          <ListItem className="listItem fadeOut">
+            <Nav exact to="/Services">Services</Nav>
           </ListItem>
-          <ListItem>
-            Sample Projects
+          <ListItem className="listItem fadeOut">
+            <Nav exact to="/SampleProjects">Sample Projects</Nav>
           </ListItem>
-          <ListItem>
-            Contact
+          <ListItem className="listItem fadeOut">
+            <Nav exact to='/Contact'>Contact</Nav>
           </ListItem>
-          <ListItem>
-            Login
+          <ListItem className="listItem fadeOut">
+            <Nav exact to='/Login'>Login</Nav>
           </ListItem>
         </List>
       </OuterContainer>
@@ -46,14 +47,16 @@ export class NavbarPage extends Component {
 
 export default NavbarPage;
 
-const OuterContainer = styled.div`
+export const OuterContainer = styled.div`
     display:grid;
     grid-template-columns: 100%;
+    align-items:center;
+    justify-content:center;
     @media (min-width:740px){
         grid-template-columns: 40% 60%;
     }
 `;
-const ImagesContainer = styled.div`
+export const ImagesContainer = styled.div`
     display:grid;
     grid-template-columns: 65% 10%;
     justify-content: space-around;
@@ -64,58 +67,94 @@ const ImagesContainer = styled.div`
         }
     }
 `;
-const Image = styled.img``;
-const HamburgerImage = styled(Image)`
+export const Image = styled.img`width:150px; height:auto;`;
+export const HamburgerImage = styled(Image)`width:50px; height:auto;
 `;
-const LogoImage = styled(Image)`
+export const Nav = styled(NavLink)`
+font-size:20px;
+text-decoration:none;
+color:#743c97;
+    @media (max-width:739px){
+    color:white;
+}
+`;
+export const LogoImage = styled(Image)`
     padding: 10px 0;
-    width:100px;
-    height:50px;
+    width:150px;
+    height:auto;
     @media (min-width: 740px){
-        width:30%;
+        width:0%;
         height:auto;
     }
 `;
-const List = styled.ul`
+export const List = styled.ul`
 list-style-type: none;
-transition: opacity 300ms ease-in-out;
+
 @media (max-width:739px){
     position:absolute;
+    transition: all 1s ease-out;
+    clip-path: circle(100px at 95% -20%);
     z-index:99;
     margin:0;
     padding:0;
     bottom:0;
     width:100vw;
-    height: calc(100vh - 60px);
+    height: calc(100vh - 80px);
     display: grid;
     grid-template-columns:100%;
     place-items:center;
     background-color: #743c97;
     color:white;
     font-size: 25px;  
-    &.inactive{
-        opacity:0; 
-    }
     &.active{
         opacity:1;
+        clip-path: circle(1000px at 95% 0%);
     }
 }
 @media (min-width:740px){
     display: grid;
     align-items:center;
-    grid-template-columns: repeat(6,auto);  
+    grid-template-columns: repeat(6, auto);  
 }
 `;
-const ListItem = styled.li`
+export const ListItem = styled.li`
+font-size:20rem;
+@media (max-width:739px){
+    &:nth-of-type(1){
+        transition: all 800ms ease 0.1s;
+    }
+    &:nth-of-type(2){
+        transition: all 500ms ease 0.2s;
+    }
+    &:nth-of-type(3){
+        transition: all 500ms ease 0.3s;
+    }
+    &:nth-of-type(4){
+        transition: all 500ms ease 0.4s;
+    }
+    &:nth-of-type(5){
+        transition: all 500ms ease 0.5s;
+    }
+    
+    &.fadeOut{
+        opacity:0; 
+    }
+    &.fadeIn{
+        opacity:1
+    }
+}
 margin:0;
 padding:0;
+
 @media (min-width:740px){
     color:#743c97;
+    
     font-size:17px;
+   width:100%;
+   height:100%;
     cursor:pointer;
     &:hover{
         color:gray;
     }
 }
 `;
-
