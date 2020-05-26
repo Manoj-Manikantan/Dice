@@ -1,4 +1,4 @@
 .servCard{
     height: 160%;
-    width: auto;
+    overflow:hidden;
 }

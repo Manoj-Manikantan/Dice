@@ -34,7 +34,7 @@ export class Login extends Component {
     }
     render() {
         return (
-            <Container>
+            <Container-fluid>
                 <NavbarPage />
                 <OuterContainer>
                     {/* <Image src={Logo} alt="Logo Image" /> */}
@@ -50,7 +50,7 @@ export class Login extends Component {
                     </Form>
                 </OuterContainer>
                 <Footer />
-            </Container>
+            </Container-fluid>
         )
     }
 }
@@ -82,6 +82,8 @@ font-weight: 600;
 color: rgba(0,0,0,0.9);
 padding: 0 0 4px 0;
 color:#743c97;
+margin:0;
+padding:0;
 `;
 const InnerContainer = styled.div`
 display:grid;
@@ -90,7 +92,7 @@ grid-row-gap:10px;
 place-itesm:center;
 position:relative;
 `;
-const Form = styled.form``;
+const Form = styled.form`margin-top:-60px;`;
 const Label = styled.label`
     position:absolute;
     font-size:20px;

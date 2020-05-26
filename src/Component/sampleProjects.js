@@ -14,7 +14,7 @@ export class SampleProjects extends Component {
 
     render() {
         return (
-            <Container>
+            <>
                 <NavbarPage />
                 <OuterContainer>
                     <FirstProjectInfo>
@@ -43,7 +43,7 @@ export class SampleProjects extends Component {
                     </Div>
                 </OuterContainer>
                 <Footer />
-            </Container>
+            </>
 
         )
     }
@@ -54,7 +54,9 @@ export default SampleProjects
 const Div = styled.div``;
 const OuterContainer = styled.div`
 display:grid;
-grid-template-columns: 100%;
+grid-template-columns: 80%;
+justify-content:center;
+grid-row-gap:20px;
 text-align:center;
 color:#743c97;
 overflow:hidden;

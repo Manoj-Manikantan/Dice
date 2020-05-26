@@ -1,7 +1,8 @@
 import React from 'react'
-import { Container, Card, CardTitle, Row, CardDeck, CardText, CardBody } from "reactstrap"
+import { Card, CardTitle, Row, CardDeck, CardText, CardBody } from "reactstrap"
 import NavbarPage from "../Component/Layout/Navbar";
 import Footer from "../Component/Layout/Footer";
+import "../Styles/services.css"
 // import LoremIpsum from 'react-lorem-ipsum';
 
 const Services = () => {
@@ -36,20 +37,21 @@ const Services = () => {
                     </Card>
                 </CardDeck>
             </Row>
+            
         )
     }
 
     return (
-        <Container>
+        <Container-fluid className="servCard">
             <NavbarPage />
-            <div>
+            <div style={{maxWidth:"10vw;"}}>
                 {cardLoad("AI / ML / Deep Learning", "Automation of Systems", "Big Data Storage, Aggregation and Analytics", "Concept Validation")}
                 {cardLoad("Customized Training", "Cyber Security", "Data Integration", "Digital Analytical Services")}
                 {cardLoad("Drone / Autonomous Vehicle Development", "IoT Sensor Integration", "Network Analysis", "Predictive Maintenance")}
                 {cardLoad("Process Optimization", "Proof of Concept", "Prototype Development", "Software Design and Project Management")}
             </div>
             <Footer />
-        </Container>
+            </Container-fluid>
     )
 }
 
