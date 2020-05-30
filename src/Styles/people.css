@@ -1,20 +1,13 @@
-  .people {
-    height: 300px;
-    width: 300px;
-    border-radius: 30px;
-    margin: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    background: white;
-    white-space: pre-line;
-  }
+ .people_page{
+   display: grid;
+   grid-template-columns:100%;
+  place-items:center;
+ }
+
   
   .people_style {
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-    align-items: center;
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    
   }
   

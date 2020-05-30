@@ -41,7 +41,8 @@ const People = () => {
     }
 
     return (
-        <Container-fluid>
+        <div >
+            <Container-fluid >
             <NavbarPage />
             <div className="People_page">
                 <div className="people_style">
@@ -67,6 +68,8 @@ const People = () => {
             </div>
             <Footer />
         </Container-fluid>
+        </div>
+        
     )
 }
 

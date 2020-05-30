@@ -15,6 +15,7 @@ export class Contact extends Component {
                         <LetsTalkHeading>
                             LET'S <Span>TALK</Span>
                         </LetsTalkHeading>
+                       
                         <SocialMediaContainer>
                             <AddressContainer>
                                 <SocialMediaHeadings>
@@ -52,6 +53,7 @@ const OuterContainer = styled(Div)`
     display:grid;
     grid-template-columns: 100%;
     grid-row-gap: 130px;
+    overflow:hidden;
 `;
 const GoogleMapContainer = styled(Div)`
 `;
@@ -64,24 +66,23 @@ const LetsTalkHeading = styled.h2`
 `;
 
 const SocialMediaContainer = styled(Div)`
+text-align:center;
 @media (min-width:740px){
     display:grid;
     grid-template-columns: 40% 40%;
     justify-content:space-around;
-    align-items:center;
     padding: 0 0 10px 0;
 }
 `;
 const AddressContainer = styled(Div)`
+
 `;
 const SocialMediaHeadings = styled.h3`
 color:#743c97;
 `;
 const Address = styled.address``;
 const SocialLinksContainer = styled(Div)`
-    display:grid;
-    grid-template-columns: 100%;
-    padding: 0 0 10px 0;
+
 `;
 const Icon = styled.i`
     margin-left: 10px;

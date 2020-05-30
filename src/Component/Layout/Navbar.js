@@ -8,10 +8,18 @@ export class NavbarPage extends Component {
 
   componentDidMount() {
 
-    document.getElementById("hamburgerIcon").addEventListener("click", () => {
+    document.getElementById("hamburgerIcon").addEventListener("click",()=>{
       document.getElementById("list").classList.toggle("active")
-      document.body.classList.toggle("bodyScroll");
-    })
+      document.body.classList.toggle("bodyScroll")
+      const listItems  = document.getElementsByClassName("listItem")
+      for(var i=0;i<listItems.length;i++){
+           listItems[i].classList.toggle("fadeIn")
+      }
+   })
+  }
+  componentWillUnmount(){
+    document.getElementById("list").classList.toggle("active")
+    document.body.classList.remove("bodyScroll")
   }
   render() {
     return (
@@ -52,13 +60,13 @@ export const OuterContainer = styled.div`
     grid-template-columns: 100%;
     align-items:center;
     justify-content:center;
-    @media (min-width:740px){
-        grid-template-columns: 40% 60%;
+    @media (min-width:768px){
+        grid-template-columns: 30% 70%;
     }
 `;
 export const ImagesContainer = styled.div`
     display:grid;
-    grid-template-columns: 65% 10%;
+    grid-template-columns: 75% 15%;
     justify-content: space-around;
     align-items: center;
     @media (min-width:740px){
@@ -67,7 +75,7 @@ export const ImagesContainer = styled.div`
         }
     }
 `;
-export const Image = styled.img`width:150px; height:auto;`;
+export const Image = styled.img`width:60%; height:auto;`;
 export const HamburgerImage = styled(Image)`width:50px; height:auto;
 `;
 export const Nav = styled(NavLink)`
@@ -77,6 +85,7 @@ color:#743c97;
     @media (max-width:739px){
     color:white;
 }
+
 `;
 export const LogoImage = styled(Image)`
     padding: 10px 0;
@@ -92,14 +101,14 @@ list-style-type: none;
 
 @media (max-width:739px){
     position:absolute;
-    transition: all 1s ease-out;
+    transition: all 800ms ease-out;
     clip-path: circle(100px at 95% -20%);
     z-index:99;
     margin:0;
     padding:0;
     bottom:0;
     width:100vw;
-    height: calc(100vh - 80px);
+    height: calc(100vh - 75px);
     display: grid;
     grid-template-columns:100%;
     place-items:center;
@@ -118,10 +127,12 @@ list-style-type: none;
 }
 `;
 export const ListItem = styled.li`
-font-size:20rem;
+font-size:20px;
 @media (max-width:739px){
+  color:white;
+  z-index:99;
     &:nth-of-type(1){
-        transition: all 800ms ease 0.1s;
+        transition: all 500ms ease 0.1s;
     }
     &:nth-of-type(2){
         transition: all 500ms ease 0.2s;
@@ -135,6 +146,9 @@ font-size:20rem;
     &:nth-of-type(5){
         transition: all 500ms ease 0.5s;
     }
+    &:nth-of-type(6){
+      transition: all 1s ease 0.5s;
+  }
     
     &.fadeOut{
         opacity:0; 

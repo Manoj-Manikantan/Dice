@@ -109,7 +109,7 @@ const OuterContainer = styled(Div)`
     height: calc(100vh - 17vh);
     position:relative;
     @media (min-width:740px){
-        height: calc(100vh - 17vh);
+        height: calc(100vh - 21vh);
     }
 `;
 const ParagraphContainer = styled(Div)`
@@ -153,7 +153,7 @@ const LearnMoreButton = styled(Button)`
     &:hover{
         color:#743c97;
         background-color:white;
-        border:2px solid #743c97;
+        border:1px solid #743c97;
     }
     @media (min-width:740px){
         width: 200px;
