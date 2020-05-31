@@ -2,7 +2,6 @@ import React from 'react'
 import { Card, CardTitle, Row, CardDeck, CardText, CardBody, Container } from "reactstrap"
 import NavbarPage from "../Component/Layout/Navbar";
 import Footer from "../Component/Layout/Footer";
-import "../Styles/services.css"
 import styled from 'styled-components'
 // import LoremIpsum from 'react-lorem-ipsum';
 

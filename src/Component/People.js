@@ -1,9 +1,8 @@
 import React, { useState } from 'react'
 import NavbarPage from "../Component/Layout/Navbar";
 import Footer from "../Component/Layout/Footer";
-import { Container } from 'reactstrap';
-import "../Styles/people.css"
-
+import { Card, Container, CardImg, CardTitle, CardText, Row } from 'reactstrap';
+import styled from 'styled-components'
 
 const People = () => {
 
@@ -32,45 +31,53 @@ const People = () => {
 
     const peopleLoad = (name, image, title) => {
         return (
-            <div className="people">
-                <h3>{name}</h3>
-                <img src={image} />
-                <p>{title}</p>
-            </div>
+            <Card style={{ width: "200px", height: "auto", margin: "2vh auto" }}>
+                <CardImg src={image} />
+                <CardTitle><b>{name}</b></CardTitle>
+                <CardText><i>{title}</i></CardText>
+            </Card>
         );
     }
 
     return (
-        <div >
-            <Container-fluid >
+        <>
             <NavbarPage />
-            <div className="People_page">
-                <div className="people_style">
-                    {peopleLoad("Dr. Terry Peckham", require("../Images/terrypeckham.png"), "Research Chair")}
-                </div>
-                <div className="people_style">
-                    {users.map((user) => (
-                        peopleLoad(user.name, user.image, user.title)
-                    ))}
-                </div>
+            <Container>
+                <OuterContainer>
+                    <div>
+                        <Row>
+                            {peopleLoad("Dr. Terry Peckham", require("../Images/terrypeckham.png"), "Research Chair")}
+                        </Row>
+                        <Row>
+                            {users.map((user) => (
+                                peopleLoad(user.name, user.image, user.title)
+                            ))}
+                        </Row>
+                        <Row>
+                            {partTime.map((partTime) => (
+                                peopleLoad(partTime.name, partTime.image, partTime.title)
+                            ))}
+                        </Row>
+                        <Row>
+                            {Technician.map((Technician) => (
+                                peopleLoad(Technician.name, Technician.image, Technician.title)
+                            ))}
+                        </Row>
+                    </div>
 
-                <div className="people_style">
-                    {partTime.map((partTime) => (
-                        peopleLoad(partTime.name, partTime.image, partTime.title)
-                    ))}
-                </div>
-
-                <div className="people_style">
-                    {Technician.map((Technician) => (
-                        peopleLoad(Technician.name, Technician.image, Technician.title)
-                    ))}
-                </div>
-            </div>
+                </OuterContainer>
+            </Container>
             <Footer />
-        </Container-fluid>
-        </div>
-        
+        </>
     )
 }
 
 export default People
+
+const OuterContainer = styled.div`
+display:grid;
+grid-template-columns:100%;
+justify-content:center;
+align-items:center;
+text-align:center;
+`;
