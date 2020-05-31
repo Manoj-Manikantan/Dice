@@ -3,7 +3,7 @@ import { Card, CardTitle, Row, CardDeck, CardText, CardBody, Container } from "r
 import NavbarPage from "../Component/Layout/Navbar";
 import Footer from "../Component/Layout/Footer";
 import styled from 'styled-components'
-// import LoremIpsum from 'react-lorem-ipsum';
+
 
 const Services = () => {
 
