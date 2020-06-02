@@ -7,7 +7,7 @@ import People from "../Component/People";
 import SampleProjects from "../Component/sampleProjects";
 import Services from "../Component/Services";
 import Login from "../Component/Login";
-import userProfile from "../Component/userProfile"
+import UserProfile from "../Component/userProfile"
 
 class Routes extends Component {
     render() {
@@ -21,7 +21,7 @@ class Routes extends Component {
                     <Route exact path="/sampleProjects" component={SampleProjects} />
                     <Route exact path="/contact" component={Contact} />
                     <Route exact path="/login" component={Login} />
-                    <Route exact path="/userProfile" component={userProfile} />
+                    <Route exact path="/userProfile" component={UserProfile} />
                 </Switch>
             </Router>
         );
