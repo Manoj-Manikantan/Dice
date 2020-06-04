@@ -3,9 +3,12 @@ import { Row, Col, Container, Card, CardImg, Button } from "reactstrap"
 import Accordion from 'react-bootstrap/Accordion'
 import NavbarPage from "../Component/Layout/Navbar";
 import Footer from "./Layout/Footer";
-import "../Styles/userProfile.css"
 import Axios from 'axios';
 import Researcher from "../Component/Researcher"
+import Technician from "../Component/Technician"
+import Student from "../Component/Student"
+
+import "../Styles/userProfile.css"
 
 const UserProfile = () => {
 
