@@ -7,7 +7,7 @@ import People from "../Component/People";
 import SampleProjects from "../Component/sampleProjects";
 import Services from "../Component/Services";
 import Login from "../Component/Login";
-import UserProfile from "../Component/userProfile"
+import UserProfile from "../Component/UserProfile/userProfile"
 
 class Routes extends Component {
     render() {

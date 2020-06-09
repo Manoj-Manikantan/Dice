@@ -1,18 +1,12 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Row, Col, Container, Button } from "reactstrap"
 import Dropdown from 'react-bootstrap/Dropdown'
 import Axios from 'axios';
 
-const Researcher = () => {
+const Technician = () => {
 
-    useEffect(() => {
-        const url = "http://localhost:80/react_back-end/technicianList.php"
-
-        Axios.get(url)
-            .then(res => console.log(res.data))
-            console.log("Im here");           
-    }, [])
-
+    const [projectDropDown, setprojectDropDown] = useState("");
+    const [studentDropDown, setstudentDropDown] = useState("");
 
     const dropdownView = (drp1, drp2) => {
         return (
@@ -51,11 +45,10 @@ const Researcher = () => {
     return (
         <Container>
             <Row>
-                {dropdownView("Technician name", "Technicians list")}
                 {dropdownView("Student name", "Students list")}
             </Row>
-        </Container>
+        </Container >
     )
 }
 
-export default Researcher
+export default Technician
